@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buscador de CEP e Mini Pokédex</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+        }
+
+        button:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+
+        #statusCep,
+        #statusPokemon {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        dl {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin: 0;
+        }
+
+        .pokemon-card {
+            text-align: center;
+        }
+
+        .pokemon-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .tipo {
+            display: inline-block;
+            margin: 5px;
+            padding: 6px 12px;
+            background-color: #eee;
+            border-radius: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Buscador de CEP e Mini Pokédex</h1>
+
+
+        <!-- ================================================= -->
+        <!-- BUSCADOR DE CEP -->
+        <!-- ================================================= -->
+
+        <section>
+
+            <h2>Buscador de CEP</h2>
+
+            <form id="formCep">
+
+                <input
+                    type="text"
+                    id="cep"
+                    placeholder="Digite o CEP"
+                    maxlength="8"
+                >
+
+                <button type="submit" id="botaoCep">
+                    Buscar CEP
+                </button>
+
+            </form>
+
+            <p id="statusCep"></p>
+
+            <div id="resultadoCep"></div>
+
+            <h3>Histórico de CEPs</h3>
+
+            <ul id="historicoCep"></ul>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- MINI POKÉDEX -->
+        <!-- ================================================= -->
+
+        <section>
+
+            <h2>Mini Pokédex</h2>
+
+            <form id="formPokemon">
+
+                <input
+                    type="text"
+                    id="pokemon"
+                    placeholder="Digite o nome do Pokémon"
+                >
+
+                <button type="submit" id="botaoPokemon">
+                    Buscar Pokémon
+                </button>
+
+            </form>
+
+            <p id="statusPokemon"></p>
+
+            <div id="resultadoPokemon"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
